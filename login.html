@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" th:href="@{pagecss.css}">
+</head>
+<body>
+<h1 class="main-title">SMART TASK MANAGEMENT</h1>
+<div class="container">
+    
+    <!-- Left side content -->
+    <div class="left-content">
+        <h1>USER LOGIN</h1>
+        <p>Welcome back! Please login to access your account.</p>
+        <p>If you don’t have an account yet, click Register.</p>
+    </div>
+
+    <!-- Right side form -->
+    <div class="right-form">
+        <form action="login" method="post">
+            <input type="email" placeholder="Enter the emailid" name="emailid"><br>
+            <input type="password" placeholder="Enter the password" name="password"><br>
+            <input type="submit" value="Login">
+            <div class="register-link">
+                <span>New User?</span>
+                <a th:href="@{/register}">Register</a>
+            </div>
+        </form>
+        <span class="success" th:text="${Success}"></span>
+        <span class="error" th:text="${error}"></span>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Base styles */
+body {
+    font-family: cursive;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+}
+
+/* Top heading */
+.main-title {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 32px;
+}
+
+/* Right form container */
+.right-form {
+    width: 80%;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    padding: 30px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: separate;   /* allow spacing between cells */
+    border-spacing: 10px;        /* spacing between cells */
+    margin-top: 20px;
+    font-family: cursive;
+    border: 2px solid #2575fc;   /* outer border */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header and cells */
+table th, table td {
+    border: 1px solid #ccc;      /* border around each cell */
+    padding: 15px;               /* inner spacing */
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Header styling */
+table th {
+    background: #2575fc;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Row styling */
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #e6f0ff;
+}
+/* General button style for links */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    text-decoration: none;       /* remove underline */
+    border-radius: 6px;
+    font-family: cursive;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* General button style */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    font-family: cursive;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Specific style for Go Back button */
+.go-back-btn {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.go-back-btn:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    transform: translateY(-2px); /* subtle lift */
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
+}
+
+.go-back-btn:active {
+    transform: translateY(0); /* reset lift when clicked */
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+/* Center the button on the page */
+.button-container {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    height: 200px;             /* adjust height as needed */
+}
+
+/* General button style */
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Go Back button with gradient colors */
+.go-back-btn {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3, #ffcc70);
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite;
+}
+
+/* Hover effect */
+.go-back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
+}
+
+/* Active (clicked) effect */
+.go-back-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Animated gradient */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+

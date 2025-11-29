@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Details</title>
+    <link rel="stylesheet" th:href="@{TaskDetailsbyemailid.css}">
+</head>
+<body>
+<h1 class="main-title">SMART TASK MANAGEMENT</h1>
+
+<!-- Right side table -->
+<div class="right-form">
+    <table>
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Email ID</th>
+                <th>Type of Task</th>
+                <th>Priority</th>
+                <th>Last Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.id}"></td>
+                <td th:text="${task.emailid}"></td>
+                <td th:text="${task.typeoftask}"></td>
+                <td th:text="${task.priority}"></td>
+                <td th:text="${task.lastDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Centered Go Back button -->
+<div class="button-container">
+    <form action="/TaskDetails" method="get">
+        <button type="submit" class="btn go-back-btn">Go Back</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Management</title>
+    <link rel="stylesheet" th:href="@{TaskDetails.css}">
+</head>
+<body>
+<h1 class="main-title">SMART TASK MANAGEMENT</h1>
+
+<div class="container">
+    <!-- Left side: Add Task -->
+    <div class="left-content">
+        <h1>ADD TASK</h1>
+        <p>Fill in the details below to add a new task. Enter the Priority between 1 to 5</p>
+
+        <form action="/TaskRequest" th:object="${tinfo}" method="post">
+            <input type="email" placeholder="Enter the emailid" th:field="*{emailid}" required><br>
+            <input type="text" placeholder="Enter the type of task" th:field="*{typeoftask}" required><br>
+            <input type="text" placeholder="Enter the priority" th:field="*{priority}" required><br>
+            <input type="text" placeholder="Enter the last date" th:field="*{lastDate}" required><br>
+            <input type="submit" value="Add Task" class="add-btn">
+        </form>
+
+        <!-- Success message -->
+        <div th:if="${successMessage}" class="success-container">
+            <h2 class="success-title" th:text="${successMessage}"></h2>
+        </div>
+           <div th:if="${errorMessage}" class="error">
+           <p th:text="${errorMessage}"></p>
+          </div>
+            </div>
+
+    <!-- Right side: View Task Details -->
+    <div class="right-form">
+        <h1>VIEW TASKS</h1>
+        <p>Enter your email to view tasks given by you.</p>
+
+        <!-- Email input form -->
+        <form action="/GetTaskDetailsByEmailid" method="get">
+            <input type="email" name="emailid" placeholder="Enter your email" required>
+            <input type="submit" value="View Tasks" class="details-btn">
+        </form>
+
+        <!-- Task table -->
+        <table th:if="${tasks}">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Email</th>
+                    <th>Type of Task</th>
+                    <th>Priority</th>
+                    <th>Last Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td th:text="${task.id}"></td>
+                    <td th:text="${task.emailid}"></td>
+                    <td th:text="${task.typeoftask}"></td>
+                    <td th:text="${task.priority}"></td>
+                    <td th:text="${task.lastDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</body>
+</html>

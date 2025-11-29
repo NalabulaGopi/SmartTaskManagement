@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Added</title>
+    <link rel="stylesheet" th:href="@{success.css}">
+</head>
+<body>
+<h1 class="main-title">SMART TASK MANAGEMENT</h1>
+
+<div class="success-container">
+    <h2 class="success-title">Task Added Successfully ✅</h2>
+    <p>Your task has been saved in the system.</p>
+
+    <!-- Buttons for navigation -->
+    <div class="button-group">
+        <form action="/TaskPage" method="get">
+            <button type="submit" class="btn">Add Another Task</button>
+        </form>
+        <form action="/GetTaskDetailsByEmailid" method="get">
+            <button type="submit" class="btn">View My Tasks</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
